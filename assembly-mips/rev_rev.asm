@@ -18,11 +18,11 @@ loop:	lb	$t2, 0($t1)
 	j 	loop
 end:
 	addi	$a0, $t3, 0
-	
+	subi	$t3, $t3, 2
 # printing reverse
 	la	$t1, buffer
 	add	$t1, $t1, $t3
-	addi	$t1, $t1, -1
+	addi	$t1, $t1, 0
 r_loop:	lb	$t2, 0($t1)
 	
 	li	$v0, 11
