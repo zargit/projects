@@ -1,5 +1,6 @@
 .data
 buffer:			.space 1024
+space:			.asciiz " "
 .text
 main:
 
@@ -27,7 +28,9 @@ r_loop:	lb	$t2, 0($t1)
 	
 	li	$v0, 11
 	addi	$a0, $t2, 0
+	blt	$a0, 65, dont
 	subi	$a0, $t2, 32
+	dont:
 	syscall
 	
 	addi	$t1, $t1, -1
