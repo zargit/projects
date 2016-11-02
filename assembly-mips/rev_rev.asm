@@ -27,6 +27,7 @@ r_loop:	lb	$t2, 0($t1)
 	
 	li	$v0, 11
 	addi	$a0, $t2, 0
+	subi	$a0, $t2, 32
 	syscall
 	
 	addi	$t1, $t1, -1
